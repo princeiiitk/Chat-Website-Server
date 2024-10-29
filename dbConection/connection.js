@@ -1,12 +1,12 @@
 import mongoose from "mongoose";
 
-const mongoDBConnect = () => {
+const mongoDBConnect = async () => {
     try {
-        mongoose.connect(process.env.URL, {
-            useUnifiedTopology: true,
+        await mongoose.connect(process.env.URL, {
             useNewUrlParser: true,
+            useUnifiedTopology: true,
         });
-        console.log("MongoDB - Connected");
+        console.log('MongoDB - Connected');
     } catch (error) {
         console.log("Error Prince MongoDB Connection: " + error);
     }
